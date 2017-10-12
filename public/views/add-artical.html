@@ -1,0 +1,13 @@
+﻿<form>
+    <div class="form-group">
+        <select name="articalCategory" ng-model="data.articalCategory" required class="form-control">
+            <option value="Food & Drink" selected>Food & Drink</option>
+            <option value="Travel, Style">Travel, Style</option>
+            <option value="Photography">Photography</option>
+        </select>
+        <input type="text" class="form-control" placeholder="Title of artical" ng-model="data.articalTitle" required />
+        <input type="text" class="form-control" placeholder="Date of artical" ng-model="data.articalDate" required />
+        <input type="text" class="form-control" placeholder="Image of artical" ng-model="data.articalImage" required />
+    </div>
+    <input type="submit" value="Submit" ng-click="addArtical(data)"/>
+</form>

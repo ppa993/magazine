@@ -1,0 +1,24 @@
+﻿<div class="form-group">
+    <select name="articalCategory" ng-model="search.category" class="form-control">
+        <option value="">All</option>
+        <option value="Food & Drink">Food & Drink</option>
+        <option value="Travel, Style">Travel, Style</option>
+        <option value="Photography">Photography</option>
+    </select>
+    <input type="text" class="form-control" placeholder="Any" ng-model="search.$" />
+    <input type="text" class="form-control" placeholder="Title of artical" ng-model="search.title" />
+    <input type="text" class="form-control" placeholder="Date of artical" ng-model="search.date" />
+    <input type="text" class="form-control" placeholder="Min paid" ng-model="paid.min" />
+    <input type="text" class="form-control" placeholder="Max paid" ng-model="paid.max" />
+</div>
+<div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block"></div>
+<article class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12 animate-box" ng-repeat-start="artical in articals | filter:search | filter:filterByPaidRange(paid.min, paid.max)">
+    <figure>
+        <img ng-src="{{artical.img_url}}" alt="Image" class="img-responsive" ng-dblclick="deleteArtical(artical._id)">
+    </figure>
+    <span class="fh5co-meta">{{artical.category}}</span>
+    <h2 class="fh5co-article-title">{{artical.title}}</h2>
+    <span class="fh5co-meta fh5co-date">{{artical.date}}</span>
+</article>
+<div class="clearfix visible-xs-block" ng-if="(($index+1) % 2 == 0) && !(($index+1) % 4 == 0)"></div>
+<div class="clearfix visible-lg-block visible-md-block visible-sm-block visible-xs-block" ng-if="($index+1) % 4 == 0" ng-repeat-end></div>
