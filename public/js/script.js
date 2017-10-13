@@ -27,7 +27,7 @@
                 $scope.error = "Could not retrieve the artical list, error: " + err.message;
             };
 
-            $http.get("http://localhost:1337/articals/")
+            $http.get(location.href + "articals/")
                 .then(onGetListCompleted, onGetListError);
         }
 
@@ -56,7 +56,7 @@
                 $scope.error = "Could not add new artical to the list, error: " + err.message;
             };
 
-            $http.post("http://localhost:1337/articals/", newArtical)
+            $http.post(location.href + "articals/", newArtical)
                 .then(onPostCompleted, onPostError);            
         };
 
@@ -79,7 +79,7 @@
                     alert("Could not delete the artical from the list, error: " + response.msg);
                 };
 
-                $http.delete("http://localhost:1337/articals/" + _id)
+                $http.delete(location.href + "articals/" + _id)
                     .then(onDeleteCompleted, onDeleteError);                        
             }
             else {
