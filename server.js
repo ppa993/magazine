@@ -7,7 +7,7 @@ var port = process.env.PORT || 1337;
 // Database
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/magazine');
+var db = monk('admin:uakfvhhz@cluster0-shard-00-00-hollb.mongodb.net:27017,cluster0-shard-00-01-hollb.mongodb.net:27017,cluster0-shard-00-02-hollb.mongodb.net:27017/magazine?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
 
 
 var articals = require('./routes/articals');
