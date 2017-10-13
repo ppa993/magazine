@@ -4,7 +4,7 @@ var router = express.Router();
 /*
  * GET articallist.
  */
-router.get('/articallist', function(req, res) {
+router.get('/', function(req, res) {
     var db = req.db;
     var collection = db.get('articals');
     collection.find({},{},function(e,docs){
@@ -15,7 +15,7 @@ router.get('/articallist', function(req, res) {
 /*
  * POST to addartical.
  */
-router.post('/addartical', function(req, res) {
+router.post('/', function(req, res) {
     var db = req.db;
     var collection = db.get('articals');
     collection.insert(req.body, function(err, result){
@@ -28,7 +28,7 @@ router.post('/addartical', function(req, res) {
 /*
  * DELETE to deleteartical.
  */
-router.delete('/deleteartical/:id', function(req, res) {
+router.delete('/:id', function(req, res) {
     var db = req.db;
     var collection = db.get('articals');
     var articalToDelete = req.params.id;

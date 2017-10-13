@@ -10,7 +10,7 @@ var monk = require('monk');
 var db = monk('localhost:27017/magazine');
 
 
-var articals = require('./routes/magazine');
+var articals = require('./routes/articals');
 
 var app = express();
 app.use(bodyParser.json());
