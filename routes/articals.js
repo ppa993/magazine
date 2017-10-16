@@ -2,18 +2,30 @@
 var router = express.Router();
 
 /*
- * GET articallist.
+ * GET artical list.
  */
-router.get('/', function(req, res) {
+router.get('/', function (req, res) {
     var db = req.db;
     var collection = db.get('articals');
-    collection.find({},{},function(e,docs){
+    collection.find({}, {}, function (e, docs) {
         res.json(docs);
     });
 });
 
 /*
- * POST to addartical.
+ * GET artical by ID.
+ */
+router.get('/:id', function (req, res) {
+    var db = req.db;
+    var collection = db.get('articals');
+    var articalID = req.params.id;
+    collection.find({ '_id': articalID }, {}, function (e, docs) {
+        res.json(docs);
+    });
+});
+
+/*
+ * POST to add artical.
  */
 router.post('/', function(req, res) {
     var db = req.db;
@@ -26,7 +38,7 @@ router.post('/', function(req, res) {
 });
 
 /*
- * DELETE to deleteartical.
+ * DELETE to delete artical.
  */
 router.delete('/:id', function(req, res) {
     var db = req.db;

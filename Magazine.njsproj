@@ -17,10 +17,12 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
     <Content Include="package.json" />
+    <Content Include="public\views\details.html" />
     <Content Include="README.md" />
     <Compile Include="mongodb-script.js" />
     <Compile Include="public\js\angular-route.js" />
     <Compile Include="public\js\app.js" />
+    <Compile Include="public\js\DetailController.js" />
     <Compile Include="server.js" />
     <Content Include="public\index.html" />
     <Compile Include="routes\articals.js" />

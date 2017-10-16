@@ -7,6 +7,9 @@
                 templateUrl: "/views/articals.html",
                 controller: "ArticalController"
             })
-            .otherwise({ redirectTo: '/' });
+            .when('/detail/:id', {
+                templateUrl: "/views/details.html",
+                controller: "DetailController"
+            });
     });
 }());

@@ -1,7 +1,7 @@
 (function () {
     var app = angular.module('magazineApp');
     
-    app.controller('ArticalController', function ($scope, $http) {
+    app.controller('ArticalController', function ($scope, $http, $location) {
 
         //////////////// FILTER ARTICAL ///////////////
         $scope.filterByPaidRange = function (minValue, maxValue) {
@@ -33,6 +33,10 @@
 
         // Load list of articals on page load
         loadArticals();
+
+        $scope.redirect = function (id) {
+            $location.path("/detail/" + id);
+        };
 
         //////////////// ADD ARTICAL ///////////////
         $scope.addArticalView = 'views/add-artical.html';
