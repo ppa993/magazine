@@ -54,6 +54,7 @@
             }
 
             var onPostCompleted = function (res) {
+                //redirect to any link to make the home page reload
                 $location.path('/reload');
             };
             var onPostError = function (err) {
