@@ -54,7 +54,7 @@
             }
 
             var onPostCompleted = function (res) {
-                loadArticals();
+                $location.path('/reload');
             };
             var onPostError = function (err) {
                 $scope.error = "Could not add new artical to the list, error: " + err.message;

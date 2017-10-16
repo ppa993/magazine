@@ -10,6 +10,7 @@
             .when('/detail/:id', {
                 templateUrl: "/views/details.html",
                 controller: "DetailController"
-            });
+            })
+            .otherwise({redirectTo: '/'});
     });
 }());
