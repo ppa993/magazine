@@ -19,6 +19,8 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Compile Include="mongodb-script.js" />
+    <Compile Include="public\js\angular-route.js" />
+    <Compile Include="public\js\app.js" />
     <Compile Include="server.js" />
     <Content Include="public\index.html" />
     <Compile Include="routes\articals.js" />
@@ -46,9 +48,9 @@
     <Compile Include="public\js\main.js" />
     <Compile Include="public\js\modernizr-2.6.2.min.js" />
     <Compile Include="public\js\respond.min.js" />
-    <Compile Include="public\js\script.js" />
+    <Compile Include="public\js\ArticalController.js" />
     <Content Include="public\views\add-artical.html" />
-    <Content Include="public\views\artical.html" />
+    <Content Include="public\views\articals.html" />
     <Content Include="public\fonts\icomoon\icomoon.svg" />
   </ItemGroup>
   <ItemGroup>
